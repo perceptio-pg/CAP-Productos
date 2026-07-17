@@ -1,0 +1,6 @@
+ID,Name,Street,City,State,PostalCode,Country,Email,Phone,Fax
+550e8400-e29b-41d4-a716-446655440001,Tech Solutions Inc.,125 Market Street,Miami,FL,33101,USA,sales@techsolutions.example,+1-305-555-0101,+1-305-555-0191
+550e8400-e29b-41d4-a716-446655440002,Global Office Supplies,850 Main Avenue,Dallas,TX,75201,USA,contact@globaloffice.example,+1-214-555-0102,+1-214-555-0192
+550e8400-e29b-41d4-a716-446655440003,Digital Hardware Corp.,420 Sunset Boulevard,Los Angeles,CA,90001,USA,orders@digitalhardware.example,+1-213-555-0103,+1-213-555-0193
+550e8400-e29b-41d4-a716-446655440004,Enterprise Devices LLC,75 Broadway,New York,NY,10001,USA,info@enterprisedevices.example,+1-212-555-0104,+1-212-555-0194
+550e8400-e29b-41d4-a716-446655440005,Cloud Equipment Partners,310 Lake Shore Drive,Chicago,IL,60601,USA,support@cloudequipment.example,+1-312-555-0105,+1-312-555-0195
