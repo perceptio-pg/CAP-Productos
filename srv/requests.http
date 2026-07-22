@@ -1,0 +1,43 @@
+### Get Orders - Read to Orders entity
+GET http://localhost:4004/odata/v4/manage-orders/Orders
+
+
+### Get Order - Read to Order
+GET http://localhost:4004/odata/v4/manage-orders/Orders('client1@client1.com')
+
+### Create Order - 
+POST http://localhost:4004/odata/v4/manage-orders/Orders HTTP/1.1
+Content-Type: application/json
+
+{
+  "ClientEmail": "client5@client5.com",
+  "FirstName": "John",
+  "LastName": "Doe"
+}
+
+### Update Order - 
+PUT http://localhost:4004/odata/v4/manage-orders/Orders('client1@client1.com') HTTP/1.1
+Content-Type: application/json
+
+{
+  "FirstName": "Carlos",
+  "LastName": "Rapelo"
+}
+
+### Delete Order - 
+DELETE http://localhost:4004/odata/v4/manage-orders/Orders('client3@client3.com')
+
+### Get Customer Tax Rate - 
+GET http://localhost:4004/odata/v4/manage-orders/getClientTaxRate(clientEmail='client2@client2.com')
+
+
+### Get Customer Tax Rate - 
+POST http://localhost:4004/odata/v4/manage-orders/cancelOrder
+Content-Type: application/json
+
+{
+  "clientEmail" : "client2@client2.com"   
+}
+
+### Get Customer Rate - Function Bound
+GET http://localhost:4004/odata/v4/manage-orders/Orders('client2@client2.com')/ManageOrders.getClientTaxRate(clientEmail='client2@client2.com')

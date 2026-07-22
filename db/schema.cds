@@ -1,5 +1,6 @@
 namespace com.logali;
 
+// Data persistencia
 entity Products {
     key ID              : UUID;
         Name            : String;
@@ -12,6 +13,8 @@ entity Products {
         Width           : Decimal(16, 2);
         Depth           : Decimal(16, 2);
         Quantity        : Decimal(16, 2);
+        Supplier_Id     : UUID;
+        ToSupplier        : Association to one Supplier on ToSupplier.ID = Supplier_Id;
 };
 
 entity Supplier {
@@ -63,3 +66,67 @@ entity SalesData {
         DeliveryDate : DateTime;
         Revenue      : Decimal(16, 2);
 }
+
+// Vistas de seleccion - permite hacer operaciones SQL
+entity SelProducts as select from Products;
+
+entity SelProducts1 as
+    select from Products {
+        *
+    };
+
+entity SelProducts2 as
+    select from Products {
+        Name,
+        Price,
+        Quantity
+    };
+
+   /* entity SelProducts3 as
+    select from Products
+    left join ProductReview
+        on Products.Name = ProductReview.Name
+    {
+        Rating,
+        Products.Name,
+        sum(
+            Price
+        ) as TotalPrice
+    }
+    group by
+        Rating,
+        Products.Name
+    order by
+        Rating; */
+
+// Vistas de proyeccion
+entity ProjProducts as projection on Products;
+
+entity ProjProducts2 as projection on Products {
+    *
+};
+
+entity ProjProducts3 as projection on Products {
+    ReleaseDate,
+    Name
+};
+
+// Entidades con parametros
+/*entity ParamProducts(pName : String) as
+    select from Products {
+        Name,
+        Price,
+        Quantity
+    }
+    where
+        Name = :pName;
+
+entity ProjParamProducts(pName : String)
+    as projection on Products
+    where Name = :pName;*/
+
+// Ampliacion de entidades
+extend Products with {
+    PriceCondition     : String(2);
+    PriceDetermination : String(3);
+};
