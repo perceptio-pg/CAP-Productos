@@ -19,5 +19,9 @@
   "sapux": [
     "app/product"
   ],
-  "overrides": {}
+  "cds": {
+    "server": {
+      "exit_on_multi_install": false
+    }
+  }
 }

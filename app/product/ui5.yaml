@@ -24,6 +24,14 @@ server:
     - name: fiori-tools-preview
       afterMiddleware: fiori-tools-appreload
       configuration:
+        editors:
+          rta:
+            layer: CUSTOMER_BASE
+            endpoints:
+              - path: /test/preview.html
+                generator: "changeUtils: SAPFioriTools-variants"
+            options:
+              scenario: FE_FROM_SCRATCH
         flp:
           theme: sap_horizon
     - name: ui5-tooling-transpile-middleware
